@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Noirac",
-    "slug": "Noirac",
+    "slug": "noirac",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
@@ -41,6 +41,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "6ba84b9a-6940-420a-9395-397ae60e50ff"
+      }
+    },
+    "owner": "nicocodu32"
   }
 }
