@@ -6,24 +6,18 @@ import { images } from '@/constants/images'
 import { Image } from 'react-native'
 import { icons } from '@/constants/icons'
 
-const TabIcon = ({focused, icon, title}: any) => {
+const TabIcon = ({focused, icon}: any) => {
     if (focused) {
         return (
             <ImageBackground 
                 source={images.highlight} 
-                className='flex flex-row w-full flex-1 min-w-[85px] 
-                min-h-[52px] mt-[19px] justify-center items-center rounded-full overflow-hidden'
+                className='flex flex-row w-full flex-1 min-w-[50px] 
+                min-h-[50px] mt-[19px] justify-center items-center rounded-full overflow-hidden'
             >
                 <Image 
                     source={icon} 
-                    tintColor={"#151312"} 
-                    className="size-5"
+                    className="size-8"
                 />
-                <Text
-                    className='text-secondary text-base font-semibold ml-1'
-                >
-                    {title}
-                </Text>
             </ImageBackground>
             )
     } else {
@@ -31,8 +25,7 @@ const TabIcon = ({focused, icon, title}: any) => {
             <View className='size-full justify-center items-center mt-4 rounded-full'> 
                 <Image
                     source={icon} 
-                    tintColor={"#A8B5DB"} 
-                    className="size-5"
+                    className="size-8"
                 />
             </View>
         )
@@ -66,55 +59,90 @@ const _layout = () => {
         <Tabs.Screen 
             name="index"
             options={{ 
-                title: 'Home',
+                title: 'Accueil',
                 headerShown: false,
                 tabBarIcon: ({focused}) => (
                     <TabIcon 
                         focused={focused}
                         icon={icons.home} 
-                        title="Home" 
                     />
                 )
             }}
         />
         <Tabs.Screen 
-            name="search"
+            name="lots"
             options={{ 
-                title: 'Search',
+                title: 'Lots',
                 headerShown: false,
                 tabBarIcon: ({focused}) => (
                     <TabIcon 
                         focused={focused}
-                        icon={icons.search} 
-                        title="Search" 
+                        icon={icons.logo_lots} 
+                    />
+                )
+            }}
+        />
+        <Tabs.Screen 
+            name="sechoir"
+            options={{ 
+                title: 'Séchoir',
+                headerShown: false,
+                tabBarIcon: ({focused}) => (
+                    <TabIcon 
+                        focused={focused}
+                        icon={icons.logo_sechoir} 
                     />
                 ) 
             }}
         />
         <Tabs.Screen 
-            name="saved"
+            name="expeditions"
             options={{ 
-                title: 'Saved',
+                title: 'Expéditions',
                 headerShown: false,
                 tabBarIcon: ({focused}) => (
                     <TabIcon 
                         focused={focused}
-                        icon={icons.save} 
-                        title="Saved" 
+                        icon={icons.logo_expeditions} 
                     />
                 )
             }}
         />
         <Tabs.Screen 
-            name="profile"
+            name="producteurs"
             options={{ 
-                title: 'Profile',
+                title: 'Producteurs',
                 headerShown: false,
                 tabBarIcon: ({focused}) => (
                     <TabIcon 
                         focused={focused}
-                        icon={icons.person} 
-                        title="Profile" 
+                        icon={icons.logo_producteurs} 
+                    />
+                )
+            }}
+        />
+        <Tabs.Screen 
+            name="acheteurs"
+            options={{ 
+                title: 'Acheteurs',
+                headerShown: false,
+                tabBarIcon: ({focused}) => (
+                    <TabIcon 
+                        focused={focused}
+                        icon={icons.logo_acheteurs} 
+                    />
+                )
+            }}
+        />
+        <Tabs.Screen 
+            name="stocks"
+            options={{ 
+                title: 'Stocks',
+                headerShown: false,
+                tabBarIcon: ({focused}) => (
+                    <TabIcon 
+                        focused={focused}
+                        icon={icons.logo_stocks} 
                     />
                 )
             }}
